@@ -16,11 +16,10 @@ load_dotenv()
 #sys import for command line arguments
 import sys
 
-#Global Variables
-MAX_RETRIES = 5
-RETRY_DELAY = 50
+#time for retry delay
+import time
 
-def run_query(cluster, query):
+def run_query(cluster, query, MAX_RETRIES=5, RETRY_DELAY=50):
     '''
     Parameters:
     -cluster: Cluster object
@@ -46,7 +45,12 @@ def run_query(cluster, query):
         if MAX_RETRIES > 0:
             print("Transient Exception, retrying operation")
 
-        run_query(cluster, query)
+            #delay the next try
+            time.sleep(RETRY_DELAY)
+            run_query(cluster, query, MAX_RETRIES-1)
+        else:
+            print("Exceded maximum number of retries.")
+            exit(0)
 
 def main():
     num_args = len(sys.argv)
