@@ -35,6 +35,8 @@ def run_query(cluster, query):
         for row in rows:
             print(row)
 
+        print(f"Found {len(rows.buffered_rows)} row(s)")
+
     except CouchbaseException as err:
         for error in err.objextra.value["errors"]:
             print(f"ERROR {error['code']}: {error['msg']}")
