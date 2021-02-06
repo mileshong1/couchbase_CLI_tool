@@ -45,7 +45,7 @@ def run_query(cluster, query):
 
         run_query(cluster, query)
 
-if __name__ == "__main__":
+def main():
     num_args = len(sys.argv)
 
     if num_args == 1:
@@ -74,3 +74,6 @@ if __name__ == "__main__":
     else:
         print("ERROR: Too many command line arugments")
         exit(0)
+
+if __name__ == "__main__":
+    main()
