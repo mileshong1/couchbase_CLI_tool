@@ -27,12 +27,13 @@ def run_query(cluster, query):
     -query: string, the query we want to execute
 
     Returns:
-    -list of rows that are the result of the query
+    -None
     '''
     try:
         rows = cluster.query(query, QueryOptions(positional_parameters=["CBS"]))
 
-        return rows
+        for row in rows:
+            print(row)
 
     except CouchbaseException as err:
         for error in err.objextra.value["errors"]:
@@ -65,11 +66,7 @@ def main():
         print(f"Running: {query}")
 
         #run the query
-        result = run_query(cluster, query)
-
-        #iterate through rows and print
-        for row in result:
-            print(row)
+        run_query(cluster, query)
 
     else:
         print("ERROR: Too many command line arugments")
