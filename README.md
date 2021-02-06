@@ -1,1 +1,1 @@
-# couchbase_CLI_tool
+# Couchbase Command Line Interface
