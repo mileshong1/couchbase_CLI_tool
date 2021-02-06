@@ -1,6 +1,6 @@
 # Couchbase Command Line Interface
 
 ## Prerequisites:
--Install Couchbase Server
--Install Couchbase Python SDK (3.0)
+-Install Couchbase Server__
+-Install Couchbase Python SDK (3.0)__
 -dotenv
