@@ -14,3 +14,32 @@ Here are some examples of how to use the tool. I recommend to use single quotes 
 ```
 python3 query_tool.py 'SELECT VALUE t.name FROM `travel-sample` t WHERE t.country = "United States" AND t.name IS NOT NULL LIMIT 25;'
 ```
+Returns:
+```
+40-Mile Air
+Texas Wings
+Atifly
+Locair
+SeaPort Airlines
+Alaska Central Express
+AirTran Airways
+U.S. Air
+PanAm World Airways
+Bemidji Airlines
+Bering Air
+Air Cargo Carriers
+CBM America
+Black Stallion Airways
+Trans Pas Air
+Cape Air
+Usa Sky Cargo
+Era Alaska
+Hankook Air US
+Orbit Airlines
+Chautauqua Airlines
+XOJET
+Orbit International Airlines
+Orbit Regional Airlines
+Orbit Atlantic Airways
+Found 25 row(s)
+```
