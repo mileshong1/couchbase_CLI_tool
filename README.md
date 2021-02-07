@@ -12,5 +12,5 @@ The tool handles transient exceptions and retries them at adjustable number of r
 ## How to Use:
 Here are some examples of how to use the tool. I recommend to use single quotes (') to specify argument as it leads to less issues with the escaped (\`) in the command line. 
 ```
-python3 
+python3 query_tool.py 'SELECT VALUE t.name FROM `travel-sample` t WHERE t.country = "United States" AND t.name IS NOT NULL LIMIT 25;'
 ```
