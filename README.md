@@ -11,11 +11,14 @@ The tool handles transient exceptions and retries them at adjustable number of r
 
 ## How to Use:
 Here are some examples of how to use the tool. I recommend to use single quotes (') to specify argument as it leads to less issues with the escaped (\`) in the command line. 
+
+### Example 1:
 ```
 python3 query_tool.py 'SELECT VALUE t.name FROM `travel-sample` t WHERE t.country = "United States" AND t.name IS NOT NULL LIMIT 25;'
 ```
 Returns:
 ```
+Running: SELECT VALUE t.name FROM `travel-sample` t WHERE t.country = "United States" AND t.name IS NOT NULL LIMIT 25;
 40-Mile Air
 Texas Wings
 Atifly
@@ -42,4 +45,14 @@ Orbit International Airlines
 Orbit Regional Airlines
 Orbit Atlantic Airways
 Found 25 row(s)
+```
+
+### Example 2:
+```
+python3 query_tool.py 'SELECT VALUE t.name FROM `yelp` t WHERE t.country = "United States" AND t.name IS NOT NULL LIMIT 25;'
+```
+Returns:
+```
+Running: SELECT VALUE t.name FROM `yelp` t WHERE t.country = "United States" AND t.name IS NOT NULL LIMIT 25;
+ERROR 12003: Keyspace not found in CB datastore keyspace yelp - cause: No bucket named yelp
 ```
